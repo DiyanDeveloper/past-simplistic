@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Past Simple Challenge - 27 Questions</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Past Simple Mastery Challenge</h1>
+    <p class="subtitle">27 questions - One for each student!</p>
+  </header>
+
+  <section id="presentation">
+    <h2>Quick Overview</h2>
+    <p><strong>The Past Simple</strong> is used to describe completed actions in the past.</p>
+    <ul>
+      <li>Regular verbs: add <code>-ed</code> (play → played)</li>
+      <li>Irregular verbs: unique forms (go → went, eat → ate)</li>
+      <li>Common time expressions: <em>yesterday</em>, <em>last night</em>, <em>in 2010</em></li>
+    </ul>
+    <div class="example-container">
+      <p><strong>Examples:</strong></p>
+      <p>"She <span class="highlight">visited</span> Paris last summer."</p>
+      <p>"They <span class="highlight">didn't finish</span> their homework."</p>
+    </div>
+    <button class="btn start-btn">Begin Challenge</button>
+  </section>
+
+  <section id="exercises" class="hidden">
+    <h2>Student Challenge</h2>
+    <div class="progress-container">
+      <progress id="progress" value="1" max="27"></progress>
+      <span id="progress-text">1/27</span>
+    </div>
+    
+    <div id="card-container" class="card-grid"></div>
+    
+    <div id="question-container" class="hidden"></div>
+    
+    <div class="navigation-btns">
+      <button class="btn prev-btn" disabled>Previous</button>
+      <button class="btn next-btn">Next</button>
+      <button class="btn check-btn hidden">Check Answers</button>
+    </div>
+  </section>
+
+  <section id="results" class="hidden">
+    <h2>Results</h2>
+    <div id="score-display"></div>
+    <button class="btn restart-btn">Try Again</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
