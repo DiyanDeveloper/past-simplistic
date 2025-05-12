@@ -2,7 +2,7 @@
 
 An interactive English grammar exercise with 40 questions (one for each student) featuring a card-based interface.
 
-![Demo Screenshot](https://ibb.co/tpbBDyGq) *(replace with actual screenshot)*
+![Demo Screenshot](https://i.ibb.co/xqMh6Vk1/image.png) *(replace with actual screenshot)*
 
 ## Features ✨
 
