@@ -341,11 +341,7 @@ let currentQuestionIndex = 0;
 let userAnswers = Array(questions.length).fill(null);
 let score = 0;
 
-// Initialize the app
-function init() {
-  generateNumberCards();
-  updateProgress();
-}
+
 
 // Updated generateNumberCards() to create 40 cards
 function generateNumberCards() {
@@ -362,6 +358,10 @@ function generateNumberCards() {
     });
     cardContainer.appendChild(card);
   }
+}
+function init() {
+  generateNumberCards();
+  updateProgress();
 }
 
 
@@ -589,17 +589,6 @@ resultsSection.classList.add('hidden');
 function generateNumberCards() {
   cardContainer.innerHTML = '';
   
-  for (let i = 1; i <= 40; i++) {  // Changed from 27 to 40
-    const card = document.createElement('div');
-    card.className = 'number-card';
-    card.textContent = i;
-    card.addEventListener('click', () => {
-      currentQuestionIndex = i - 1;
-      showQuestion();
-      updateProgress();
-    });
-    cardContainer.appendChild(card);
-  }
-}
+
 
 
