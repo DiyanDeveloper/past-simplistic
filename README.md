@@ -6,7 +6,7 @@ An interactive English grammar exercise with 40 questions (one for each student)
 
 ## Features ✨
 
-- 27 unique Past Simple questions (fill-in & multiple choice)
+- 40 unique Past Simple questions (fill-in & multiple choice)
 - Card/sticky note interface for each question
 - Interactive feedback with explanations
 - Progress tracking
@@ -16,7 +16,7 @@ An interactive English grammar exercise with 40 questions (one for each student)
 ## How It Works 🛠️
 
 1. **Number Selection**: 
-   - Each student picks a number (1-27)
+   - Each student picks a number (1-40)
    - The corresponding question appears as a card/sticky note
 
 2. **Answer Interface**:
@@ -36,4 +36,4 @@ An interactive English grammar exercise with 40 questions (one for each student)
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/past-simple-challenge.git
+   git clone https://github.com/DiyanDeveloper/past-simplistic
