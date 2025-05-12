@@ -1,8 +1,8 @@
 # Past Simple Tense Challenge 🎯
 
-An interactive English grammar exercise with 27 questions (one for each student) featuring a card-based interface.
+An interactive English grammar exercise with 40 questions (one for each student) featuring a card-based interface.
 
-![Demo Screenshot](screenshot.png) *(replace with actual screenshot)*
+![Demo Screenshot](https://ibb.co/tpbBDyGq) *(replace with actual screenshot)*
 
 ## Features ✨
 
