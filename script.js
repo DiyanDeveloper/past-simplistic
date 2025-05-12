@@ -207,16 +207,16 @@ const questions = [
     answer: 0,
     feedback: "Correct! 'Did' is the past simple of 'do'"
   },
-  {
-    id: 27,
-    question: "They ____ (forget) to call me.",
-    type: "fill",
-    answer: "forgot",
-    feedback: "Correct! 'Forget' is irregular: forget → forgot → forgotten"
-  },
+ {
+  id: 27,
+  question: "They ____ (forget) to call me.",
+  type: "fill",
+  answer: "forgot",
+  feedback: "Correct! 'Forget' is irregular: forget → forgot → forgotten"
+},  // ← THIS COMMA was missing
 {
-    id: 28,
-    question: "The teacher ____ (speak) to us about history yesterday.",
+  id: 28,
+  question: "The teacher ____ (speak) to us about history yesterday.",
     type: "fill",
     answer: "spoke",
     feedback: "Correct! 'Speak' is irregular: speak → spoke → spoken"
