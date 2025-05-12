@@ -347,11 +347,11 @@ function init() {
   updateProgress();
 }
 
-// Generate the sticky note number cards
+// Updated generateNumberCards() to create 40 cards
 function generateNumberCards() {
   cardContainer.innerHTML = '';
   
-  for (let i = 1; i <= 27; i++) {
+  for (let i = 1; i <= 40; i++) {  // Changed from 27 to 40
     const card = document.createElement('div');
     card.className = 'number-card';
     card.textContent = i;
@@ -363,6 +363,7 @@ function generateNumberCards() {
     cardContainer.appendChild(card);
   }
 }
+
 
 // Show selected question
 function showQuestion() {
@@ -601,5 +602,4 @@ function generateNumberCards() {
   }
 }
 
-// Update initialization of userAnswers array
-let userAnswers = Array(questions.length).fill(null); // Now handles 40 items
+
