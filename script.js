@@ -213,7 +213,7 @@ const questions = [
     type: "fill",
     answer: "forgot",
     feedback: "Correct! 'Forget' is irregular: forget → forgot → forgotten"
-  }
+  },
 {
     id: 28,
     question: "The teacher ____ (speak) to us about history yesterday.",
