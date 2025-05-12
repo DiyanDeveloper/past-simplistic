@@ -319,8 +319,6 @@ const questions = [
   }
 ];
 
-
-
 // DOM Elements
 const presentationSection = document.getElementById('presentation');
 const exercisesSection = document.getElementById('exercises');
@@ -338,16 +336,14 @@ const scoreDisplay = document.getElementById('score-display');
 
 // State variables
 let currentQuestionIndex = 0;
-let userAnswers = Array(questions.length).fill(null);
+let userAnswers = Array(40).fill(null); // Adjusted to account for 40 questions
 let score = 0;
-
-
 
 // Updated generateNumberCards() to create 40 cards
 function generateNumberCards() {
   cardContainer.innerHTML = '';
-  
-  for (let i = 1; i <= 40; i++) {  // Changed from 27 to 40
+
+  for (let i = 1; i <= 40; i++) { // Adjusted for 40 questions
     const card = document.createElement('div');
     card.className = 'number-card';
     card.textContent = i;
@@ -359,18 +355,18 @@ function generateNumberCards() {
     cardContainer.appendChild(card);
   }
 }
+
 function init() {
   generateNumberCards();
   updateProgress();
 }
-
 
 // Show selected question
 function showQuestion() {
   cardContainer.classList.add('hidden');
   questionContainer.classList.remove('hidden');
   questionContainer.innerHTML = '';
-  
+
   const question = questions[currentQuestionIndex];
 
   const questionCard = document.createElement('div');
@@ -393,11 +389,11 @@ function showQuestion() {
   } else if (question.type === 'mcq') {
     const radioGroup = document.createElement('div');
     radioGroup.className = 'radio-group';
-    
+
     question.options.forEach((option, i) => {
       const radioDiv = document.createElement('div');
       radioDiv.className = 'radio-option';
-      
+
       const radio = document.createElement('input');
       radio.type = 'radio';
       radio.id = `q-${question.id}-opt-${i}`;
@@ -406,16 +402,16 @@ function showQuestion() {
       if (userAnswers[currentQuestionIndex] === i.toString()) {
         radio.checked = true;
       }
-      
+
       const label = document.createElement('label');
       label.htmlFor = `q-${question.id}-opt-${i}`;
       label.textContent = option;
-      
+
       radioDiv.appendChild(radio);
       radioDiv.appendChild(label);
       radioGroup.appendChild(radioDiv);
     });
-    
+
     answerOptions.appendChild(radioGroup);
   }
 
@@ -441,7 +437,7 @@ function updateProgress() {
 function updateButtonStates() {
   prevBtn.disabled = currentQuestionIndex === 0;
   nextBtn.disabled = currentQuestionIndex === questions.length - 1;
-  
+
   if (currentQuestionIndex === questions.length - 1) {
     nextBtn.classList.add('hidden');
     checkBtn.classList.remove('hidden');
@@ -472,7 +468,7 @@ function showFeedback() {
   const question = questions[currentQuestionIndex];
   const feedback = document.createElement('div');
   feedback.className = 'feedback';
-  
+
   if (isAnswerCorrect(currentQuestionIndex)) {
     feedback.textContent = question.feedback;
     feedback.classList.add('correct');
@@ -486,7 +482,7 @@ function showFeedback() {
     feedback.textContent = `Incorrect. The correct answer is: ${correctAnswer}`;
     feedback.classList.add('incorrect');
   }
-  
+
   const questionCard = document.querySelector('.question-card');
   questionCard.appendChild(feedback);
 }
@@ -495,9 +491,9 @@ function showFeedback() {
 function isAnswerCorrect(index) {
   const question = questions[index];
   const userAnswer = userAnswers[index];
-  
+
   if (userAnswer === null) return false;
-  
+
   if (question.type === 'fill') {
     const possibleAnswers = [question.answer.toLowerCase()];
     if (question.alternatives) {
@@ -507,7 +503,7 @@ function isAnswerCorrect(index) {
   } else if (question.type === 'mcq') {
     return parseInt(userAnswer) === question.answer;
   }
-  
+
   return false;
 }
 
@@ -516,10 +512,10 @@ function showResults() {
   score = userAnswers.reduce((acc, answer, index) => {
     return acc + (isAnswerCorrect(index) ? 1 : 0);
   }, 0);
-  
+
   const percentage = Math.round((score / questions.length) * 100);
   let message = '';
-  
+
   if (percentage >= 90) {
     message = `Excellent! You got ${score}/${questions.length} (${percentage}%) <div class="star-rating">★★★★★</div>`;
   } else if (percentage >= 70) {
@@ -529,7 +525,7 @@ function showResults() {
   } else {
     message = `Keep practicing! You got ${score}/${questions.length} (${percentage}%) <div class="star-rating">★★☆☆☆</div>`;
   }
-  
+
   scoreDisplay.innerHTML = message;
   exercisesSection.classList.add('hidden');
   resultsSection.classList.remove('hidden');
@@ -573,7 +569,7 @@ restartBtn.addEventListener('click', () => {
   currentQuestionIndex = 0;
   userAnswers = Array(questions.length).fill(null);
   score = 0;
-  
+
   resultsSection.classList.add('hidden');
   exercisesSection.classList.remove('hidden');
   init();
@@ -585,10 +581,3 @@ restartBtn.addEventListener('click', () => {
 presentationSection.classList.remove('hidden');
 exercisesSection.classList.add('hidden');
 resultsSection.classList.add('hidden');
-// Update generateNumberCards() to create 40 cards
-function generateNumberCards() {
-  cardContainer.innerHTML = '';
-  
-
-
-
