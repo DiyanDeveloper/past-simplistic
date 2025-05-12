@@ -214,6 +214,109 @@ const questions = [
     answer: "forgot",
     feedback: "Correct! 'Forget' is irregular: forget → forgot → forgotten"
   }
+{
+    id: 28,
+    question: "The teacher ____ (speak) to us about history yesterday.",
+    type: "fill",
+    answer: "spoke",
+    feedback: "Correct! 'Speak' is irregular: speak → spoke → spoken"
+  },
+  {
+    id: 29,
+    question: "Which is the past simple of 'choose'?",
+    type: "mcq",
+    options: ["choosed", "chose", "chosen", "choice"],
+    answer: 1,
+    feedback: "Correct! 'Choose' is irregular: choose → chose → chosen"
+  },
+  {
+    id: 30,
+    question: "We ____ (not be) ready for the test.",
+    type: "fill",
+    answer: "weren't",
+    alternatives: ["were not"],
+    feedback: "Correct! Past of 'to be': was/were"
+  },
+  {
+    id: 31,
+    question: "She ____ (wear) a beautiful dress to the party.",
+    type: "fill",
+    answer: "wore",
+    feedback: "Correct! 'Wear' is irregular: wear → wore → worn"
+  },
+  {
+    id: 32,
+    question: "____ they ____ (build) this house themselves?",
+    type: "fill",
+    answer: "Did build",
+    feedback: "Correct! Questions: Did + subject + base verb"
+  },
+  {
+    id: 33,
+    question: "I ____ (feel) sick after eating that food.",
+    type: "fill",
+    answer: "felt",
+    feedback: "Correct! 'Feel' is irregular: feel → felt → felt"
+  },
+  {
+    id: 34,
+    question: "Which sentence is correct?",
+    type: "mcq",
+    options: [
+      "He catched the ball",
+      "He caught the ball",
+      "He did caught the ball",
+      "He catch the ball"
+    ],
+    answer: 1,
+    feedback: "Correct! 'Catch' is irregular: catch → caught → caught"
+  },
+  {
+    id: 35,
+    question: "They ____ (not sleep) well last night.",
+    type: "fill",
+    answer: "didn't sleep",
+    alternatives: ["did not sleep"],
+    feedback: "Correct! Negative form: didn't + base verb"
+  },
+  {
+    id: 36,
+    question: "The sun ____ (shine) brightly all day.",
+    type: "fill",
+    answer: "shone",
+    alternatives: ["shined"],
+    feedback: "Correct! 'Shine' can be regular or irregular (shine → shone/shined)"
+  },
+  {
+    id: 37,
+    question: "____ you ____ (meet) anyone famous?",
+    type: "fill",
+    answer: "Did meet",
+    feedback: "Correct! Questions: Did + subject + base verb"
+  },
+  {
+    id: 38,
+    question: "He ____ (lose) his keys on the way home.",
+    type: "fill",
+    answer: "lost",
+    feedback: "Correct! 'Lose' is irregular: lose → lost → lost"
+  },
+  {
+    id: 39,
+    question: "Which is the past simple of 'tear'?",
+    type: "mcq",
+    options: ["teared", "tore", "torn", "tared"],
+    answer: 1,
+    feedback: "Correct! 'Tear' is irregular: tear → tore → torn"
+  },
+  {
+    id: 40,
+    question: "We ____ (not hear) the phone ring.",
+    type: "fill",
+    answer: "didn't hear",
+    alternatives: ["did not hear"],
+    feedback: "Correct! Negative form: didn't + base verb"
+  }
 ];
 
 
@@ -481,3 +584,22 @@ restartBtn.addEventListener('click', () => {
 presentationSection.classList.remove('hidden');
 exercisesSection.classList.add('hidden');
 resultsSection.classList.add('hidden');
+// Update generateNumberCards() to create 40 cards
+function generateNumberCards() {
+  cardContainer.innerHTML = '';
+  
+  for (let i = 1; i <= 40; i++) {  // Changed from 27 to 40
+    const card = document.createElement('div');
+    card.className = 'number-card';
+    card.textContent = i;
+    card.addEventListener('click', () => {
+      currentQuestionIndex = i - 1;
+      showQuestion();
+      updateProgress();
+    });
+    cardContainer.appendChild(card);
+  }
+}
+
+// Update initialization of userAnswers array
+let userAnswers = Array(questions.length).fill(null); // Now handles 40 items
