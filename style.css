@@ -349,3 +349,27 @@ footer {
 .bug-report a:hover {
   text-decoration: underline;
 }
+/* Update the card grid to handle more cards */
+.card-grid {
+  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr)); /* Slightly smaller cards */
+  gap: 0.75rem; /* Reduced gap */
+}
+
+/* Adjust number card rotation for more variety */
+.number-card:nth-child(4n) {
+  transform: rotate(2deg);
+  background: linear-gradient(135deg, #e8f5e9 0%, #a5d6a7 100%);
+}
+
+.number-card:nth-child(4n+1) {
+  transform: rotate(-1deg);
+  background: linear-gradient(135deg, #fff3e0 0%, #ffcc80 100%);
+}
+
+.number-card:nth-child(4n+2) {
+  transform: rotate(-2deg);
+}
+
+.number-card:nth-child(4n+3) {
+  transform: rotate(1deg);
+}
